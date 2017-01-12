@@ -1,0 +1,396 @@
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+[class*="entypo-"]:before,
+[class^="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+@mixin media($size) {
+  @media screen and (max-width: #{$size}) {
+    @content;
+  }
+}
+
+// Colours
+$light-grey: #F2F7FB;
+$background: #393F52;
+$contact: #ECEEF7;
+$sub-heading: #CECDD4;
+$text: #3D424A;
+$dark-grey: #919BA1;
+$button-grey: #E6EBEF;
+$navy: #5A6873;
+$blue: #5988C1;
+$line-grey: #E6E6E6;
+$light-purple: #D4D9E8;
+$dark-purple: #5C6686;
+
+//Media
+$desktop: 1024px;
+$tablet: 768px;
+$mobile: 640px;
+
+@mixin devices($xs: $mobile, $sm: $tablet, $lg: $desktop) {
+  @if $xs == true { @include media(#{$xs}) { @content; } }
+  @if $sm == true { @include media(#{$sm}) { @content; } }
+  @if $lg == true { @include media(#{$lg}) { @content; } }
+}
+
+// Body Styles
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+html, body {
+	font-family: 'Prata', serif;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+i {
+  font-style: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+  font-style: inherit;
+}
+
+p > a {
+  border-bottom: 1px dotted;
+  font-weight: bold;
+}
+
+hr {
+	border: 0;
+	height: 0;
+	border-top: 1px dotted #CACACA;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  transform: translate(0);
+
+  &:hover {
+    .slider-controls {
+      visibility: visible;
+    }
+  }
+
+  .slider-controls {
+    visibility: hidden;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    transition: visibility 100ms ease;
+
+    .next, .prev {
+      top: calc(50% - 0.5em);
+      font-size: 3em;
+      color: #b2b6d0;
+      position: absolute;
+      cursor: pointer;
+      opacity: 0.6;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .next {
+      right: 1em;
+    }
+
+    .prev {
+      left: 1em;
+    }
+  }
+
+  .slider-images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    transition: transform 250ms ease-out;
+
+    .slider-image {
+      flex: 1;
+      width: 100%;
+    }
+  }
+}
+
+//Nav
+
+nav {
+  padding: 1em 0;
+	background: white;
+
+	@include media ($mobile) {
+		height: 150px;
+	}
+
+  .nav-content {
+    display: flex;
+    flex-direction: row;
+  }
+
+  a#logo {
+    margin-right: auto;
+
+    h1 {
+  		color: $text;
+  		letter-spacing: 0.5px;
+  		font-size: 1.1em;
+      margin-right: auto;
+      font-weight: 400;
+
+  		span {
+  			color: white;
+  			text-transform: lowercase;
+  			font-weight: 400;
+
+  		}
+  	}
+  }
+
+  .icons {
+
+    a { margin: 0.5em; }
+
+    i.icon {
+      color: $text;
+      font-size: 1.1em;
+      cursor: pointer;
+
+      @include media ($mobile) {
+        font-size: 1.2em;
+      }
+    }
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1em;
+
+  @include devices(true, true, false) {
+    padding: 0 2em;
+  }
+}
+
+// Hero Content
+#hero-content {
+  text-align: left;
+  padding: 4em 0;
+
+  @include media ($mobile) {
+    padding: 3em 0 11em 0;
+  }
+
+  h1 {
+    font-size: 2em;
+    color: $text;
+    line-height: 1.4em;
+    max-width: 38%;
+    font-weight: 400;
+    @include media ($mobile) {
+      font-size: 1.55em;
+      width: 80%;
+      line-height: 1.4em;
+    }
+  }
+
+  p {
+    font-size: 1em;
+    color: $text;
+    font-weight: 300;
+    max-width: 50%;
+    font-family: 'ProximaLight';
+    line-height: 1.6em;
+    padding: 0 0 2em 0;
+    @include media ($mobile) {
+      max-width: 90%!important;
+      padding: 0.5em 0 2em 0;
+    }
+  }
+
+  a.button {
+    border: none;
+    background: none;
+    color: $text;
+    text-transform: uppercase;
+    border: 2px solid $text;
+    border-radius: 3px;
+    font-size: 0.8em;
+    padding: 1.2em 2em 1.2em 2em;
+    font-weight: 400;
+    letter-spacing: 1px;
+    cursor: pointer;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+
+    &:hover {
+      color: white;
+      background: $text;
+      transition: background-color 0.4s;
+    }
+  }
+}
+
+header {
+	background-color: #474966;
+  background-size: cover;
+	width: 100%;
+}
+
+///// Homepage Projects /////
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+
+  .project {
+    padding: 2em;
+    width: 50%;
+
+    &:nth-child(odd) {
+      padding-left: 0;
+    }
+
+    &:nth-child(even) {
+      padding-right: 0;
+    }
+
+    .project-content {
+			font-size: 16px;
+			font-size: 1rem;
+			vertical-align: top;
+			text-align: left;
+
+      @include media ($mobile) {
+				margin: 0 0 20px;
+				text-align: center;
+			}
+
+			img {
+				max-width: 100%;
+				height: auto;
+				margin: 0 0 10px;
+				border-radius: 4px;
+				margin-top: 1em;
+			}
+
+			h2 {
+				margin: 1em 0 5px;
+				color: $text;
+				font-weight: 400;
+				font-size: 1.28em;
+				padding: 0 0 0.5em 0;
+
+        @include media($mobile) {
+					line-height: 1.5em;
+					font-size: 1.3em;
+					padding: 0;
+				}
+			}
+
+			button.tag {
+				background: $text;
+				color: white;
+				border: none;
+				font-size: 0.6em;
+				padding: 0.8em 0.8em 0.8em 0.8em;
+			}
+
+			p {
+				font-size: .9em;
+				line-height: 1.5em;
+				color: #727b88;
+				font-family: 'Proxima';
+				font-size: 1em;
+				line-height: 1.8em;
+				width: 85%;
+				font-weight: 400;
+				padding: 0 0 2em 0;
+				@include media($mobile) {
+					width: 100%;
+				}
+
+        a.link {
+					border: none!important;
+					color: inherit;
+					font-style: inherit!important;
+					padding: 0!important;
+					border-bottom: 1px dotted!important;
+				}
+			}
+		}
+	}
+
+	a {
+		border: none;
+		background: none;
+		color: #9AA1B3;
+		font-family: 'Proxima';
+		border: 2px solid $button-grey;
+		border-radius: 3px;
+		font-size: 0.85em;
+		text-transform: uppercase;
+		padding: 1em 2em 1em 2em;
+		font-weight: 400;
+		letter-spacing: 1px;
+		cursor: pointer;
+
+		&:hover {
+			color: $text;
+			border: 2px solid $text;
+		}
+	}
+}
+
+///// End Homepage Projects /////
+
+//// Project Details ////
+
+.project-detail {
+  display: flex;
+  flex: wrap;
+}
+
+///// Footer /////
+
+section#footer {
+	width: 100%;
+	height: 70px;
+	text-align: center;
+
+	h3 {
+		font-size: 0.9em;
+		font-weight: 300;
+		color: $text;
+		line-height: 70px;
+	}
+}
+
+///// End Footer /////
