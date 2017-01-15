@@ -9,13 +9,13 @@ const renderLink = (project) => {
 
   if (project.external) {
     return (
-      <a href={project.external} target="_blank">
-        View Project
+      <a class="button" href={project.external} target="_blank">
+        View Project <i class="icon-export" />
       </a>
     );
   } else {
     return (
-      <Link to={`/projects/${project.id}`}>
+      <Link class="button" to={`/projects/${project.id}`}>
         View Project
       </Link>
     )
@@ -31,10 +31,10 @@ function Projects() {
           <div class="project-content">
             {project.images && project.images.length ?
               <Slider images={project.images} />
-            : <img src={`/public/${project.image}`} />}
+            : <img src={project.image} />}
 
             <h2>{project.name}</h2>
-            <p>{project.caption}</p>
+            <p dangerouslySetInnerHTML={{ __html: project.caption }} />
 
             {renderLink(project)}
           </div>

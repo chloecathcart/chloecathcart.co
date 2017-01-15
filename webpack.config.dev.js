@@ -15,15 +15,15 @@ module.exports = {
   ],
 
   output: {
-    path: path.join(__dirname, '/dist/'),
+    path: path.join(__dirname, '/src'),
     filename: 'bundle.js',
     pathInfo: true,
-    publicPath: 'http://localhost:3000/dist/',
+    publicPath: '/public/',
     hot: true,
   },
 
   resolve: {
-    root: path.join(__dirname, ''),
+    root: path.join(__dirname, '/src'),
     modulesDirectories: [
       'node_modules',
       'src',
@@ -49,8 +49,14 @@ module.exports = {
         loader: 'style!css!autoprefixer?browsers=last 2 version!sass?outputStyle=expanded',
       },
       {
-        test: /\.(png|jpg|jpeg)(\?[a-z0-9]+)?$/, // font files
-        loader: 'url-loader?name=[path][name].[ext]',
+        test: /\.css$/,
+        loader: 'style!css!',
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.(jpg|jpeg|gif|png)$/,
+        loader: 'file',
+        exclude: /node_modules/,
       },
       {
         test: /\.(ttf|eot|svg|woff)(\?[a-z0-9]+)?$/, // font files

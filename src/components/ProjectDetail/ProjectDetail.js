@@ -10,11 +10,11 @@ function ProjectDetail(props) {
     <div class="project-detail">
       <div id="hero-content">
         <h1>{project.name}</h1>
-        <p>{project.caption}</p>
+        <p>{project.body || project.caption}</p>
 
         {project.images && project.images.length ?
           <Slider images={project.images} />
-        : <img src={`/public/${project.image}`} />
+        : <img src={project.image} />
       }
       </div>
     </div>

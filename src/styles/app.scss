@@ -1,27 +1,15 @@
-@import url(http://weloveiconfonts.com/api/?family=entypo);
-
-[class*="entypo-"]:before,
-[class^="entypo-"]:before {
-  font-family: 'entypo', sans-serif;
-}
-
 @mixin media($size) {
   @media screen and (max-width: #{$size}) {
     @content;
   }
 }
 
+@import url('https://fonts.googleapis.com/css?family=Jaldi');
+
 // Colours
-$light-grey: #F2F7FB;
-$background: #393F52;
-$contact: #ECEEF7;
-$sub-heading: #CECDD4;
 $text: #3D424A;
 $dark-grey: #919BA1;
 $button-grey: #E6EBEF;
-$navy: #5A6873;
-$blue: #5988C1;
-$line-grey: #E6E6E6;
 $light-purple: #D4D9E8;
 $dark-purple: #5C6686;
 
@@ -54,7 +42,7 @@ ul, ol {
 }
 
 html, body {
-	font-family: 'Prata', serif;
+	font-family: 'Jaldi', sans-serif;
 }
 
 img {
@@ -73,7 +61,7 @@ a {
 }
 
 p > a {
-  border-bottom: 1px dotted;
+  color: $dark-purple;
   font-weight: bold;
 }
 
@@ -160,7 +148,7 @@ nav {
     h1 {
   		color: $text;
   		letter-spacing: 0.5px;
-  		font-size: 1.1em;
+  		font-size: 1.4em;
       margin-right: auto;
       font-weight: 400;
 
@@ -174,10 +162,17 @@ nav {
   }
 
   .icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include media ($mobile) {
+      display: none;
+    }
 
     a { margin: 0.5em; }
 
-    i.icon {
+    i {
       color: $text;
       font-size: 1.1em;
       cursor: pointer;
@@ -211,8 +206,7 @@ nav {
   h1 {
     font-size: 2em;
     color: $text;
-    line-height: 1.4em;
-    max-width: 38%;
+    line-height: 0.6em;
     font-weight: 400;
     @include media ($mobile) {
       font-size: 1.55em;
@@ -225,8 +219,7 @@ nav {
     font-size: 1em;
     color: $text;
     font-weight: 300;
-    max-width: 50%;
-    font-family: 'ProximaLight';
+    max-width: 45%;
     line-height: 1.6em;
     padding: 0 0 2em 0;
     @include media ($mobile) {
@@ -243,12 +236,13 @@ nav {
     border: 2px solid $text;
     border-radius: 3px;
     font-size: 0.8em;
-    padding: 1.2em 2em 1.2em 2em;
+    padding: 1em 2em 1em 2em;
     font-weight: 400;
     letter-spacing: 1px;
     cursor: pointer;
     outline: none;
     font-family: 'Roboto', sans-serif;
+    align-items: center;
 
     &:hover {
       color: white;
@@ -269,10 +263,14 @@ header {
 .projects {
   display: flex;
   flex-wrap: wrap;
+  padding-bottom: 4em;
 
   .project {
     padding: 2em;
     width: 50%;
+
+    @include media ($tablet) { width: 50%; }
+    @include media ($mobile) { width: 100%; padding: 0; }
 
     &:nth-child(odd) {
       padding-left: 0;
@@ -290,7 +288,6 @@ header {
 
       @include media ($mobile) {
 				margin: 0 0 20px;
-				text-align: center;
 			}
 
 			img {
@@ -302,11 +299,10 @@ header {
 			}
 
 			h2 {
-				margin: 1em 0 5px;
 				color: $text;
 				font-weight: 400;
-				font-size: 1.28em;
-				padding: 0 0 0.5em 0;
+				font-size: 1.4em;
+				padding: 0.5em 0 0.5em 0;
 
         @include media($mobile) {
 					line-height: 1.5em;
@@ -327,32 +323,24 @@ header {
 				font-size: .9em;
 				line-height: 1.5em;
 				color: #727b88;
-				font-family: 'Proxima';
 				font-size: 1em;
 				line-height: 1.8em;
 				width: 85%;
 				font-weight: 400;
-				padding: 0 0 2em 0;
+				padding: 0 0 1em 0;
 				@include media($mobile) {
 					width: 100%;
-				}
-
-        a.link {
-					border: none!important;
-					color: inherit;
-					font-style: inherit!important;
-					padding: 0!important;
-					border-bottom: 1px dotted!important;
 				}
 			}
 		}
 	}
 
-	a {
+	a.button {
+    display: inline-flex;
+    align-items: center;
 		border: none;
 		background: none;
 		color: #9AA1B3;
-		font-family: 'Proxima';
 		border: 2px solid $button-grey;
 		border-radius: 3px;
 		font-size: 0.85em;
@@ -361,6 +349,11 @@ header {
 		font-weight: 400;
 		letter-spacing: 1px;
 		cursor: pointer;
+
+    > i {
+      margin-left: 0.5em;
+      align-self: flex-end;
+    }
 
 		&:hover {
 			color: $text;
@@ -388,7 +381,7 @@ section#footer {
 	h3 {
 		font-size: 0.9em;
 		font-weight: 300;
-		color: $text;
+		color: #727b88;
 		line-height: 70px;
 	}
 }

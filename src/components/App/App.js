@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import { dependencies } from 'package.json';
 import Header from 'Header/Header';
 import Footer from 'Footer/Footer';
 

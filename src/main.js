@@ -1,4 +1,5 @@
 import 'styles/normalize.scss';
+import 'styles/icons.css';
 import 'styles/app.scss';
 
 import React from 'react';

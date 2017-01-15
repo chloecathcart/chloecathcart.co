@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const NODE_ENV = process.env.NODE_ENV;
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -22,9 +23,9 @@ module.exports = {
   ],
 
   output: {
-    path: 'public/dist/',
+    path: './public/',
     pathInfo: true,
-    publicPath: '/dist/',
+    publicPath: '/',
     filename: 'bundle.min.js',
   },
 
@@ -46,10 +47,14 @@ module.exports = {
   },
 
   plugins: [
-    new CleanWebpackPlugin(['public/dist'], {
+    new CleanWebpackPlugin(['public'], {
       verbose: false,
-      dry: false
+      dry: false,
+      exclude: ['images', 'fonts', 'favicon.png', 'index.html']
     }),
+    new CopyWebpackPlugin([
+      { from: 'images/**/*' }
+    ]),
     new webpack.optimize.OccurenceOrderPlugin(true),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
@@ -65,9 +70,6 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
       },
-    }),
-    new HtmlWebpackPlugin({
-      title: 'React'
     })
   ],
 
@@ -78,8 +80,12 @@ module.exports = {
         loader: 'style!css!autoprefixer?browsers=last 2 version!sass?outputStyle=expanded',
       },
       {
+        test: /\.css$/,
+        loader: 'style!css!'
+      },
+      {
         test: /\.(png|jpg|jpeg)(\?[a-z0-9]+)?$/, // font files
-        loader: 'url-loader?name=[path][name].[ext]',
+        loader: 'file-loader?name=[path][name].[ext]',
       },
       {
         test: /\.(ttf|eot|svg|woff)(\?[a-z0-9]+)?$/, // fonts files

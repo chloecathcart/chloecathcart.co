@@ -6,7 +6,7 @@ const PORT = 3000;
 require('colors');
 
 new WebpackDevServer(webpack(config), {
-  publicPath: config.output.publicPath,
+  publicPath: '/',
   hot: true,
   noInfo: true,
   historyApiFallback: true
