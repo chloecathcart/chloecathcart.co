@@ -13,7 +13,7 @@ $button-grey: #E6EBEF;
 $light-purple: #D4D9E8;
 $dark-purple: #5C6686;
 $peach: #4391d8;
-
+$color: blue;
 //Fonts
 $lora: Lora, serif;
 $opensans: Open Sans, sans-serif;
@@ -221,7 +221,7 @@ nav {
     opacity: 0.2;
     width: 40px;
     height: 40px;
-    background-color: $text;
+    background-color: $peach;
     border-radius: 4px;
     bottom: -160px;
     -webkit-animation: square 25s infinite;
@@ -497,6 +497,27 @@ section#footer {
 		color: #727b88;
 		line-height: 70px;
 	}
+  .icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include media ($mobile) {
+      display: none;
+    }
+
+    a { margin: 0.5em; }
+
+    i {
+      color: $text;
+      font-size: 1.1em;
+      cursor: pointer;
+
+      @include media ($mobile) {
+        font-size: 1.2em;
+      }
+    }
+  }
 }
 
 ///// End Footer /////
