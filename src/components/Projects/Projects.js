@@ -16,7 +16,7 @@ const renderLink = (project) => {
   } else {
     return (
       <Link class="button" to={`/projects/${project.id}`}>
-        View Project
+        View Project→
       </Link>
     )
   }
