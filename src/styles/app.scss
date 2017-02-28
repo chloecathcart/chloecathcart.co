@@ -4,7 +4,7 @@
   }
 }
 
-@import url('https://fonts.googleapis.com/css?family=Lora|Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Lora|Open+Sans|Roboto');
 
 // Colours
 $text: #32333A;
@@ -14,6 +14,7 @@ $light-purple: #D4D9E8;
 $dark-purple: #5C6686;
 $peach: #4391d8;
 $color: blue;
+$subtext: #727b88;
 //Fonts
 $lora: Lora, serif;
 $opensans: Open Sans, sans-serif;
@@ -47,7 +48,7 @@ ul, ol {
 }
 
 html, body {
-	font-family: 'Open Sans', sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 img {
@@ -152,10 +153,10 @@ nav {
       color: $text;
       font-size: 1em;
       font-weight: 400;
+      font-family: inherit;
        &:hover {
          color: $peach;
          cursor: pointer;
-         font-weight: 600;
        }
     }
   }
@@ -199,8 +200,8 @@ nav {
 // Hero Content
 #hero-content {
   text-align: left;
-  padding: 4em 0;
-  height: 50vh;
+  padding: 3em 0;
+  height: 40vh;
 
   @include media ($mobile) {
     padding: 3em 0 11em 0;
@@ -211,17 +212,17 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  height: 80%;
+  height: 30%;
   z-index: 999;
   }
   .bg-bubbles li {
     position: absolute;
     list-style: none;
     display: block;
-    opacity: 0.2;
-    width: 40px;
-    height: 40px;
-    background-color: $peach;
+    opacity: 0.5;
+    width: 30px;
+    height: 30px;
+    background-color: #EFA0E9;
     border-radius: 4px;
     bottom: -160px;
     -webkit-animation: square 25s infinite;
@@ -231,28 +232,29 @@ nav {
   }
   .bg-bubbles li:nth-child(1) {
     left: 10%;
+    background-color: #3671FF;
   }
   .bg-bubbles li:nth-child(2) {
     left: 20%;
     width: 20px;
     height: 20px;
-    -webkit-animation-delay: 1s;
-            animation-delay: 1s;
     -webkit-animation-duration: 10s;
             animation-duration: 10s;
+    background-color: #1FA2FF;
   }
   .bg-bubbles li:nth-child(3) {
     left: 25%;
     -webkit-animation-delay: 1s;
             animation-delay: 1s;
+    background-color: #0EC2FF;
   }
   .bg-bubbles li:nth-child(4) {
     left: 40%;
-    width: 60px;
-    height: 60px;
+    width: 20px;
+    height: 20px;
     -webkit-animation-duration: 22s;
             animation-duration: 22s;
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: #25DDF5;
   }
   .bg-bubbles li:nth-child(5) {
     left: 70%;
@@ -263,7 +265,7 @@ nav {
     height: 40px;
     -webkit-animation-delay: 3s;
             animation-delay: 3s;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #72F1DB;
   }
   .bg-bubbles li:nth-child(7) {
     left: 32%;
@@ -271,6 +273,7 @@ nav {
     height: 40px;
     -webkit-animation-delay: 7s;
             animation-delay: 7s;
+    background-color: #68ADF3;
   }
   .bg-bubbles li:nth-child(8) {
     left: 55%;
@@ -280,6 +283,7 @@ nav {
             animation-delay: 15s;
     -webkit-animation-duration: 10s;
             animation-duration: 10s;
+    background-color: #5533FF;
   }
   .bg-bubbles li:nth-child(9) {
     left: 25%;
@@ -289,14 +293,15 @@ nav {
             animation-delay: 2s;
     -webkit-animation-duration: 10s;
             animation-duration: 10s;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: #68ADF3;
   }
   .bg-bubbles li:nth-child(10) {
     left: 90%;
     width: 40px;
     height: 40px;
-    -webkit-animation-delay: 11s;
-            animation-delay: 11s;
+    -webkit-animation-delay: 0.1s;
+            animation-delay: 0.1s;
+    background-color: #6A8FEB;
   }
   @-webkit-keyframes square {
     0% {
@@ -350,10 +355,10 @@ nav {
     border: none;
     background: none;
     color: $text;
-    font-weight: 400;
+    font-weight: 600;
     border-radius: 3px;
     font-size: 0.9em;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     cursor: pointer;
     outline: none;
     align-items: center;
@@ -361,7 +366,6 @@ nav {
     &:hover {
       color: $peach;
       transition: background-color 0.4s;
-      font-weight: 600;
     }
   }
 }
@@ -512,6 +516,9 @@ section#footer {
       color: $text;
       font-size: 1.1em;
       cursor: pointer;
+      &:hover {
+        color: $peach;
+      }
 
       @include media ($mobile) {
         font-size: 1.2em;
@@ -521,3 +528,30 @@ section#footer {
 }
 
 ///// End Footer /////
+
+.about {
+  h1 {
+    color: $text;
+    font-size: 1.8em;
+    font-weight: 400;
+    max-width: 60%;
+    line-height: 1.4em;
+    font-family: 'Lora', serif;
+
+    span {
+      color: $subtext;
+      font-size: 0.4em;
+      font-weight: 600;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      text-transform: uppercase;
+    }
+  }
+
+  p {
+    max-width: 80%;
+    line-height: 2em;
+    font-size: 1em;
+    color: $subtext;
+    padding: 1em 0 1em;
+  }
+}
