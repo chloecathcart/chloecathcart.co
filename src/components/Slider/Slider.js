@@ -52,7 +52,7 @@ class Slider extends Component {
             transform: `translateX(-${(this.state.index * 100) / this.props.images.length}%)`
           }}>
           {this.props.images.map(image =>
-            <li class="slider-image">
+            <li key={image} class="slider-image">
               <img src={image} role="presentation" />
             </li>
           )}

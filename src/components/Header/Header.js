@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router';
 
 function Header() {
@@ -7,9 +7,13 @@ function Header() {
   		<nav>
         <div class="container">
           <div class="nav-content">
-      	    <Link id="logo" to="/" class='hvr-hang'><h1>CHLOECATHCART.CO<span> | Product Designer</span></h1></Link>
-      			<div class="about">
-              <h1><Link to="/about">About</Link></h1>
+      	    <Link id="logo" to="/">
+              CHLOECATHCART.CO <span>| Product Designer</span>
+            </Link>
+      			<div class="nav-links">
+              <ul>
+                <li><Link to="/about">About</Link></li>
+              </ul>
             </div>
           </div>
         </div>

@@ -4,7 +4,16 @@ export default [
     image: "/images/blend.png",
     name: "Blend: Document Upload",
     caption: "I designed the user experience journey for uploading documents during the mortgage application process at Blend. Overall it improved the user interface and achieved it's goal of decreasing the time to submit an application.",
+    detail: "One of the more challenging projects at Blend as no other app had the functionality to upload financial statements, paystubs and tax returns manually while also having the ability to import them directly from your account.",
+    heading: "Why redesign document upload UX?",
+    subheading: "Previously users could only upload one document at a time which increased the amount of clicks throughout the application and hindered the speed of the application process. The main issues were:",
+    pointone: "One",
+    pointtwo: "Two",
+    video: "/images/doc-upload.mov",
+    poster: "/images/blend.png",
+
     link: true,
+
     images: [
       "/images/blend.png",
       "/images/doc-01.png",
@@ -17,6 +26,9 @@ export default [
     image: "/images/form-02.png",
     name: "Blend: Form Redesign",
     caption: "I redesigned form entry for mortgage application at Blend which resulted in improved input fields, a better understanding of error states and decreased the time to submit an application.",
+    detail: "The new form design improve the functionality and overall user experience of the application process for people applying for a mortgage. It allows borrowers to complete their application faster due to improved understanding of input fields and error states.",
+    heading: "Why redesign form entry?",
+    subheading: "The main reason for redesigning form entry was to decrease the time to submit each application for borrowers and to improve user experience throughout the whole application process.",
     link: true,
     images: [
       "/images/form-02.png",
@@ -78,22 +90,6 @@ export default [
     external: 'https://music-bank.herokuapp.com'
   },
   {
-    id: 'ui-challenge',
-    image: "/images/music-player.png",
-    name: "UI Challenge ",
-    caption: "A personal project I took on in order to improve my UI and creative skills which have been posted on Dribbble.",
-    link: true,
-    images: [
-      "/images/ui-01.png",
-      "/images/ui-02.png",
-      "/images/ui-03.png",
-      "/images/ui-04.png",
-      "/images/ui-05.png",
-      "/images/ui-06.png",
-    ],
-    external: 'https://dribbble.com/shots/2316599-Day-9-30-Music-Player'
-  },
-  {
     image: "/images/planets.png",
     name: "Illustration Work",
     caption: "I first started out with Illustration when it comes to design and it is now something I love to do in my spare time.",
@@ -109,5 +105,21 @@ export default [
       "/images/ill-06.png",
     ],
     external: 'https://dribbble.com/chloecathcart'
-  }
+  },
+  {
+    id: 'ui-challenge',
+    image: "/images/music-player.png",
+    name: "UI Challenge ",
+    caption: "A personal project I took on in order to improve my UI and creative skills which have been posted on Dribbble.",
+    link: true,
+    images: [
+      "/images/ui-01.png",
+      "/images/ui-02.png",
+      "/images/ui-03.png",
+      "/images/ui-04.png",
+      "/images/ui-05.png",
+      "/images/ui-06.png",
+    ],
+    external: 'https://dribbble.com/shots/2316599-Day-9-30-Music-Player'
+  },
 ];
