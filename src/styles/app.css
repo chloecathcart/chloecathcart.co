@@ -1,0 +1,337 @@
+@font-face {
+  font-family: 'Apercu';
+  src: url("/fonts/apercu_bold_pro.otf"), url("/fonts/apercu_regular_pro.otf");
+  font-weight: normal;
+  font-style: normal; }
+
+h1 {
+  font-family: 'Apercu' !important; }
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased; }
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box; }
+
+ul,
+ol {
+  list-style-type: none; }
+
+html,
+body {
+  font-family: 'Apercu'; }
+
+img {
+  height: auto;
+  max-width: 100%; }
+
+i {
+  font-style: inherit; }
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+  font-style: inherit; }
+
+p > a {
+  color: #5c6686;
+  font-weight: bold; }
+
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px dotted #cacaca;
+  width: 80%;
+  margin: 0 auto; }
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  transform: translate(0); }
+  .slider:hover .slider-controls {
+    visibility: visible; }
+  .slider .slider-controls {
+    visibility: hidden;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    transition: visibility 100ms ease; }
+    .slider .slider-controls .next,
+    .slider .slider-controls .prev {
+      top: calc(50% - 0.5em);
+      font-size: 3em;
+      color: #b2b6d0;
+      position: absolute;
+      cursor: pointer;
+      opacity: 0.6; }
+      .slider .slider-controls .next:hover,
+      .slider .slider-controls .prev:hover {
+        opacity: 1; }
+    .slider .slider-controls .next {
+      right: 1em; }
+    .slider .slider-controls .prev {
+      left: 1em; }
+  .slider .slider-images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    transition: transform 250ms ease-out; }
+    .slider .slider-images .slider-image {
+      flex: 1;
+      width: 100%; }
+
+nav {
+  padding: 4em 0;
+  background: white; }
+  @media screen and (max-width: 640px) {
+    nav {
+      height: 150px; } }
+  nav .nav-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+  nav .nav-links ul {
+    display: flex; }
+    nav .nav-links ul li {
+      color: #32333a;
+      font-size: 1em;
+      font-weight: 400;
+      margin-left: 2.2em;
+      font-family: inherit; }
+      nav .nav-links ul li:hover {
+        color: #4391d8;
+        cursor: pointer; }
+  nav a#logo img {
+    height: 30px; }
+  nav a#logo:hover {
+    color: #4391d8;
+    transition: background-color 0.4s; }
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 1em; }
+  @media screen and (max-width: true) {
+    .container {
+      padding: 0 2em; } }
+  @media screen and (max-width: true) {
+    .container {
+      padding: 0 2em; } }
+
+h1 {
+  font-size: 2.2em;
+  color: #32333a;
+  max-width: 80%;
+  line-height: 1.4em;
+  font-weight: 400; }
+  @media screen and (max-width: 640px) {
+    h1 {
+      font-size: 1.55em;
+      width: 80%;
+      line-height: 1.4em; } }
+
+h2 {
+  font-weight: 400; }
+
+p {
+  font-size: 1em;
+  color: #32333a;
+  font-weight: 300;
+  line-height: 1.6em;
+  padding: 0 0 2em 0; }
+
+#hero-content {
+  text-align: left;
+  padding: 3em 0;
+  height: 40vh; }
+  @media screen and (max-width: 640px) {
+    #hero-content {
+      padding: 3em 0 11em 0; } }
+  #hero-content p {
+    max-width: 55%; }
+    @media screen and (max-width: 640px) {
+      #hero-content p {
+        max-width: 90% !important;
+        padding: 0.5em 0 2em 0; } }
+  #hero-content a.button {
+    border: none;
+    background: none;
+    color: #32333a;
+    font-weight: 600;
+    border-radius: 3px;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    outline: none;
+    align-items: center; }
+    #hero-content a.button:hover {
+      color: #4391d8;
+      transition: background-color 0.4s; }
+
+header {
+  background-color: #474966;
+  background-size: cover;
+  width: 100%; }
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 4em;
+  z-index: 1000;
+  position: relative; }
+  .projects .project {
+    padding: 2em 0;
+    width: 20%; }
+    @media screen and (max-width: 768px) {
+      .projects .project {
+        width: 50%; } }
+    @media screen and (max-width: 640px) {
+      .projects .project {
+        width: 100%;
+        padding: 0; } }
+    .projects .project:nth-child(odd) {
+      padding-left: 0; }
+    .projects .project:nth-child(even) {
+      padding-right: 0; }
+    .projects .project .project-content {
+      font-size: 16px;
+      font-size: 1rem;
+      vertical-align: top;
+      text-align: left; }
+      @media screen and (max-width: 640px) {
+        .projects .project .project-content {
+          margin: 0 0 20px; } }
+      .projects .project .project-content img {
+        max-width: 100%;
+        height: auto;
+        margin: 0 0 10px;
+        border-radius: 4px;
+        margin-top: 1em; }
+      .projects .project .project-content h2 {
+        color: #32333a;
+        font-weight: 400;
+        font-size: 1.4em;
+        font-family: 'Lora', serif;
+        padding: 0.5em 0 0.5em 0; }
+        @media screen and (max-width: 640px) {
+          .projects .project .project-content h2 {
+            line-height: 1.5em;
+            font-size: 1.3em;
+            padding: 0; } }
+      .projects .project .project-content button.tag {
+        background: #32333a;
+        color: white;
+        border: none;
+        font-size: 0.6em;
+        padding: 0.8em 0.8em 0.8em 0.8em; }
+      .projects .project .project-content p {
+        font-size: 0.9em;
+        line-height: 1.5em;
+        color: #727b88;
+        font-size: 1em;
+        line-height: 1.8em;
+        width: 65%;
+        font-weight: 400;
+        padding: 0 0 1em 0; }
+        @media screen and (max-width: 640px) {
+          .projects .project .project-content p {
+            width: 100%; } }
+  .projects a.button {
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    background: none;
+    color: #4391d8;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer; }
+    .projects a.button > i {
+      margin-left: 0.5em;
+      align-self: flex-end; }
+    .projects a.button:hover {
+      color: #1f5d96; }
+
+.project-detail {
+  display: flex;
+  flex: wrap; }
+  .project-detail h2 {
+    padding: 0.5em 0; }
+  .project-detail p {
+    max-width: 70%; }
+  .project-detail .project-detail-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 4em 0; }
+    .project-detail .project-detail-content .text-container {
+      display: flex;
+      flex-direction: column; }
+    .project-detail .project-detail-content .video-container {
+      display: flex;
+      flex-direction: column; }
+  .project-detail .MobileVideo {
+    position: relative;
+    background-image: url("/images/iphone.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 420px;
+    height: 600px; }
+    .project-detail .MobileVideo video {
+      position: absolute;
+      top: 53px;
+      left: 86px;
+      width: 246px;
+      height: 437px; }
+
+section#footer {
+  height: 70px;
+  text-align: center; }
+  section#footer h3 {
+    font-size: 0.9em;
+    font-weight: 300;
+    color: #727b88;
+    line-height: 70px; }
+  section#footer .icons {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    @media screen and (max-width: 640px) {
+      section#footer .icons {
+        display: none; } }
+    section#footer .icons a {
+      margin: 0.5em; }
+    section#footer .icons i {
+      color: #32333a;
+      font-size: 1.1em;
+      cursor: pointer; }
+      section#footer .icons i:hover {
+        color: #4391d8; }
+      @media screen and (max-width: 640px) {
+        section#footer .icons i {
+          font-size: 1.2em; } }
+
+.about .brand {
+  color: #32333a;
+  font-size: 1.8em;
+  font-weight: 400;
+  line-height: 1.4em;
+  font-family: 'Lora', serif; }
+  .about .brand span {
+    color: #727b88;
+    font-size: 0.4em;
+    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    text-transform: uppercase; }
+
+.about p {
+  line-height: 2em;
+  font-size: 1em;
+  color: #727b88;
+  padding: 1em 0 1em; }
