@@ -1,68 +1,48 @@
 export default [
   {
+    id: 'growth',
+    name: "Growth design @ HubSpot",
+    caption: "Designing for the growth onboarding and engagement and retention team.",
+    link: true,
+  },
+
+  {
+    id: 'notifications',
+    name: "Designing the HubSpot notification system",
+    caption: "Coming in with fresh eyes to build a system from scratch.",
+    link: true,
+  },
+
+  {
+    id: 'systems',
+    name: "Optimizing for design systems",
+    caption: "Figuring our how a design team of 90 can make use of sketch symbols.",
+    link: true,
+  },
+
+  {
+    id: 'prove',
+    name: "Building an end to end bodybuilding mobile app",
+    caption: "Seeing a gap in the market and creating a better experience for bodybuilders.",
+    link: true,
+  },
+
+  {
     id: 'blend',
-    image: "/images/blend.png",
-    name: "Blend: Document Upload",
-    caption: "I designed the user experience journey for uploading documents during the mortgage application process at Blend. Overall it improved the user interface and achieved it's goal of decreasing the time to submit an application.",
-    detail: "One of the more challenging projects at Blend as no other app had the functionality to upload financial statements, paystubs and tax returns manually while also having the ability to import them directly from your account.",
-    heading: "Why redesign document upload UX?",
-    subheading: "Previously users could only upload one document at a time which increased the amount of clicks throughout the application and hindered the speed of the application process. The main issues were:",
-    pointone: "One",
-    pointtwo: "Two",
-    video: "/images/doc-upload.mov",
-    poster: "/images/blend.png",
+    name: "Creating a new upload experience @ Blend",
+    caption: "Designing an experience to help users upload documents during their mortgage application process.",
+    link: true,
+  },
 
+  {
+    id: 'illustration',
+    name: "Fun stuff: my illustration collection",
+    caption: "I’m not just all product - when I have time I like to illustrate.",
     link: true,
+  },
 
-    images: [
-      "/images/blend.png",
-      "/images/doc-01.png",
-      "/images/doc-02.png",
-      "/images/doc-03.png",
-    ]
-  },
+
   {
-    id: 'blend-form',
-    image: "/images/form-02.png",
-    name: "Blend: Form Redesign",
-    caption: "I redesigned form entry for mortgage application at Blend which resulted in improved input fields, a better understanding of error states and decreased the time to submit an application.",
-    detail: "The new form design improve the functionality and overall user experience of the application process for people applying for a mortgage. It allows borrowers to complete their application faster due to improved understanding of input fields and error states.",
-    heading: "Why redesign form entry?",
-    subheading: "The main reason for redesigning form entry was to decrease the time to submit each application for borrowers and to improve user experience throughout the whole application process.",
-    link: true,
-    images: [
-      "/images/form-02.png",
-      "/images/form-01.png",
-    ]
-  },
-  {
-    id: 'flare',
-    image: "/images/weather.png",
-    name: "Flare Weather App",
-    caption: "A personal project I worked on before moving to San Francisco. Designed by myself and coded by <a target='_blank' href='https://markmurray.co'>Mark Murray</a>. Features include weather based by location, forcast for the next 48 hours, forecast summary on hover and conversion from Celsius to Farenheit.",
-    link: true,
-    external: 'https://flare-e5b26.firebaseapp.com/',
-    images: [
-      "/images/weather-02.png",
-      "/images/weather-01.png",
-      "/images/weather-03.png",
-      "/images/weather-04.png",
-    ]
-  },
-  {
-    id: '3player',
-    image: "/images/3player.png",
-    images: [
-      "/images/tv3-01.png",
-      "/images/tv3-02.png",
-      "/images/tv3-03.png",
-      "/images/tv3-04.png",
-    ],
-    name: "3Player App",
-    caption: "At Axonista I worked with the creative team designing the award winning TV3 3Player app for iOS and Android which was released during the Rugby World Cup 2015.",
-    link: true
-  },
-  /*{
     id: 'gambeal',
     image: "/images/gambeal.png",
     name: "Gambeal App",
@@ -106,5 +86,4 @@ export default [
     ],
     external: 'https://dribbble.com/chloecathcart'
   },
-  */
 ];

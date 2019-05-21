@@ -5,7 +5,6 @@ class About extends Component {
   render() {
     return (
       <div className="about">
-        <h1>“It pays to keep an open mind, but not so open your brains fall out.” <span>- Carl Sagan</span></h1>
         <p>I’m a product designer and illustrator who just moved back home to Dublin after living in San Francisco. I worked for a company called Blend to
         create a better user experience for the mortgage application process in the US and also created the visual identity of their customer facing app through
         illustration.</p>

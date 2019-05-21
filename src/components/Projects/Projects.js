@@ -18,12 +18,6 @@ const renderLink = project => {
       </a>
     );
   }
-
-  return (
-    <Link className="button" to={`/projects/${project.id}`}>
-      View Project→
-    </Link>
-  );
 };
 
 function Projects() {
@@ -32,13 +26,8 @@ function Projects() {
       {projects.map(project => (
         <li key={project.id} className="project">
           <div className="project-content">
-            {project.images && project.images.length ? (
-              <Slider images={project.images} />
-            ) : (
-              <img src={project.image} />
-            )}
 
-            <h2>{project.name}</h2>
+            <h3>{project.name}</h3>
             <p dangerouslySetInnerHTML={{ __html: project.caption }} />
 
             {renderLink(project)}

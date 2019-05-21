@@ -6,20 +6,10 @@ function Index() {
   return (
     <div className="index">
       <div id="hero-content">
-        <h1>I’m a product designer currently working at HubSpot on the Engagement & Retention team. Previously at Blend in San Francisco.</h1>
-        <a className="button" href="/images/chloecathcartcv.pdf" target="_blank">View Resume→</a>
-        <ul className="bg-bubbles">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
+        <h1>Chloe Cathcart</h1>
+        <hr></hr>
+        <h2>Product Designer @ HubSpot</h2>
+        <p>Currently working on the Growth Onboarding team at HubSpot desiging new experiences for our users. I have a focus on creating experiences with business objectives in mind.</p>
       </div>
 
       <Projects />

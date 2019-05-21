@@ -1,11 +1,16 @@
 @font-face {
-  font-family: 'Apercu';
-  src: url("/fonts/apercu_bold_pro.otf"), url("/fonts/apercu_regular_pro.otf");
+  font-family: 'CircularStd';
+  src: local("CircularStd"), url("/CircularStd-Book.otf"), url("/CircularStd-Medium.otf"), url("/CircularStd-Bold.otf"), url("/CircularStd-Black.otf");
   font-weight: normal;
   font-style: normal; }
 
 h1 {
-  font-family: 'Apercu' !important; }
+  font-family: 'CircularStd-Bold' !important;
+  font-size: 2em; }
+
+h2 {
+  font-family: 'CircularStd-Medium' !important;
+  font-size: 1.2em; }
 
 * {
   margin: 0;
@@ -23,7 +28,7 @@ ol {
 
 html,
 body {
-  font-family: 'Apercu'; }
+  font-family: "CircularStd-Book" !important; }
 
 img {
   height: auto;
@@ -44,9 +49,11 @@ p > a {
 hr {
   border: 0;
   height: 0;
-  border-top: 1px dotted #cacaca;
-  width: 80%;
-  margin: 0 auto; }
+  border-top: 12px solid #85FAED;
+  width: 26%;
+  position: relative;
+  top: -42px;
+  z-index: -1; }
 
 .slider {
   position: relative;
@@ -85,33 +92,6 @@ hr {
       flex: 1;
       width: 100%; }
 
-nav {
-  padding: 4em 0;
-  background: white; }
-  @media screen and (max-width: 640px) {
-    nav {
-      height: 150px; } }
-  nav .nav-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between; }
-  nav .nav-links ul {
-    display: flex; }
-    nav .nav-links ul li {
-      color: #32333a;
-      font-size: 1em;
-      font-weight: 400;
-      margin-left: 2.2em;
-      font-family: inherit; }
-      nav .nav-links ul li:hover {
-        color: #4391d8;
-        cursor: pointer; }
-  nav a#logo img {
-    height: 30px; }
-  nav a#logo:hover {
-    color: #4391d8;
-    transition: background-color 0.4s; }
-
 .container {
   max-width: 1000px;
   margin: auto;
@@ -125,7 +105,6 @@ nav {
 
 h1 {
   font-size: 2.2em;
-  color: #32333a;
   max-width: 80%;
   line-height: 1.4em;
   font-weight: 400; }
@@ -136,47 +115,41 @@ h1 {
       line-height: 1.4em; } }
 
 h2 {
-  font-weight: 400; }
+  font-family: "CircularStd-Medium" !important;
+  font-weight: 300; }
+
+h3 {
+  font-family: "CircularStd-Bold" !important;
+  line-height: 1.4em;
+  padding-bottom: 1em; }
+
+h4 {
+  font-family: "CircularStd-Book" !important;
+  font-size: 0.8em;
+  font-weight: 300; }
 
 p {
   font-size: 1em;
-  color: #32333a;
+  color: #86899E;
   font-weight: 300;
   line-height: 1.6em;
   padding: 0 0 2em 0; }
 
 #hero-content {
   text-align: left;
-  padding: 3em 0;
+  padding: 6em 0 18em 0;
   height: 40vh; }
   @media screen and (max-width: 640px) {
     #hero-content {
       padding: 3em 0 11em 0; } }
   #hero-content p {
-    max-width: 55%; }
+    max-width: 80%;
+    font-size: 1.1em;
+    padding-top: 1em; }
     @media screen and (max-width: 640px) {
       #hero-content p {
         max-width: 90% !important;
         padding: 0.5em 0 2em 0; } }
-  #hero-content a.button {
-    border: none;
-    background: none;
-    color: #32333a;
-    font-weight: 600;
-    border-radius: 3px;
-    font-size: 0.9em;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    outline: none;
-    align-items: center; }
-    #hero-content a.button:hover {
-      color: #4391d8;
-      transition: background-color 0.4s; }
-
-header {
-  background-color: #474966;
-  background-size: cover;
-  width: 100%; }
 
 .projects {
   display: flex;
@@ -185,8 +158,19 @@ header {
   z-index: 1000;
   position: relative; }
   .projects .project {
-    padding: 2em 0;
-    width: 20%; }
+    width: 30%;
+    border: 2px solid black;
+    border-radius: 4px;
+    margin-right: 2em;
+    margin-bottom: 2em;
+    position: relative;
+    transition-timing-function: ease-in-out; }
+    .projects .project:hover {
+      background: #F6FFFE;
+      border: 2px solid #85FAED;
+      cursor: pointer;
+      transition-timing-function: ease-in-out;
+      transition: 0.25s; }
     @media screen and (max-width: 768px) {
       .projects .project {
         width: 50%; } }
@@ -199,6 +183,7 @@ header {
     .projects .project:nth-child(even) {
       padding-right: 0; }
     .projects .project .project-content {
+      padding: 2em;
       font-size: 16px;
       font-size: 1rem;
       vertical-align: top;
@@ -206,57 +191,26 @@ header {
       @media screen and (max-width: 640px) {
         .projects .project .project-content {
           margin: 0 0 20px; } }
-      .projects .project .project-content img {
-        max-width: 100%;
-        height: auto;
-        margin: 0 0 10px;
-        border-radius: 4px;
-        margin-top: 1em; }
       .projects .project .project-content h2 {
-        color: #32333a;
         font-weight: 400;
-        font-size: 1.4em;
-        font-family: 'Lora', serif;
+        font-size: 1.2em;
         padding: 0.5em 0 0.5em 0; }
         @media screen and (max-width: 640px) {
           .projects .project .project-content h2 {
             line-height: 1.5em;
             font-size: 1.3em;
             padding: 0; } }
-      .projects .project .project-content button.tag {
-        background: #32333a;
-        color: white;
-        border: none;
-        font-size: 0.6em;
-        padding: 0.8em 0.8em 0.8em 0.8em; }
       .projects .project .project-content p {
         font-size: 0.9em;
         line-height: 1.5em;
         color: #727b88;
-        font-size: 1em;
+        font-size: 0.9em;
         line-height: 1.8em;
-        width: 65%;
         font-weight: 400;
         padding: 0 0 1em 0; }
         @media screen and (max-width: 640px) {
           .projects .project .project-content p {
             width: 100%; } }
-  .projects a.button {
-    display: inline-flex;
-    align-items: center;
-    border: none;
-    background: none;
-    color: #4391d8;
-    border-radius: 3px;
-    font-size: 0.9em;
-    font-weight: 600;
-    letter-spacing: 1px;
-    cursor: pointer; }
-    .projects a.button > i {
-      margin-left: 0.5em;
-      align-self: flex-end; }
-    .projects a.button:hover {
-      color: #1f5d96; }
 
 .project-detail {
   display: flex;
@@ -292,46 +246,5 @@ header {
 
 section#footer {
   height: 70px;
-  text-align: center; }
-  section#footer h3 {
-    font-size: 0.9em;
-    font-weight: 300;
-    color: #727b88;
-    line-height: 70px; }
-  section#footer .icons {
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-    @media screen and (max-width: 640px) {
-      section#footer .icons {
-        display: none; } }
-    section#footer .icons a {
-      margin: 0.5em; }
-    section#footer .icons i {
-      color: #32333a;
-      font-size: 1.1em;
-      cursor: pointer; }
-      section#footer .icons i:hover {
-        color: #4391d8; }
-      @media screen and (max-width: 640px) {
-        section#footer .icons i {
-          font-size: 1.2em; } }
-
-.about .brand {
-  color: #32333a;
-  font-size: 1.8em;
-  font-weight: 400;
-  line-height: 1.4em;
-  font-family: 'Lora', serif; }
-  .about .brand span {
-    color: #727b88;
-    font-size: 0.4em;
-    font-weight: 600;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    text-transform: uppercase; }
-
-.about p {
-  line-height: 2em;
-  font-size: 1em;
-  color: #727b88;
-  padding: 1em 0 1em; }
+  text-align: center;
+  color: #86899E; }
