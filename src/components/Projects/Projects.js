@@ -22,13 +22,14 @@ const renderLink = project => {
 
 function Projects() {
   return (
-    <ul className="projects">
+    <ul className="projects slider">
       {projects.map(project => (
-        <li key={project.id} className="project">
+        <li key={project.id} className="project slider">
           <div className="project-content">
-
+            
             <h3>{project.name}</h3>
             <p dangerouslySetInnerHTML={{ __html: project.caption }} />
+            <h5 dangerouslySetInnerHTML={{ __html: project.tag }} />
 
             {renderLink(project)}
           </div>

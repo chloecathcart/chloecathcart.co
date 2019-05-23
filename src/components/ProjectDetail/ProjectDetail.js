@@ -1,7 +1,6 @@
 import React from 'react';
 import projects from '../../data/projects';
 import Slider from '../Slider/Slider';
-import MobileVideo from '../MobileVideo/MobileVideo';
 
 const renderSlider = (project) => (
   project.images && project.images.length ?
@@ -27,16 +26,7 @@ function ProjectDetail(props) {
               <li>{project.pointone}</li>
               <li>{project.pointtwo}</li>
             </ul>
-          </div>
-          <div id="video-container">
-            {project.video ?
-              <MobileVideo
-                src={project.video}
-                poster={project.poster} />
-            : null}
-
-            {/* renderSlider(project) */}
-          </div>
+          </div>         
         </div>
         <h2>{project.heading}</h2>
         <p>{project.subheading}</p>

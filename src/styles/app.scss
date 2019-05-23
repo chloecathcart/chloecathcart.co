@@ -11,24 +11,12 @@
   font-style: normal;
 }
 
-h1 {
-  font-family: 'CircularStd-Bold' !important;
-  font-size: 2em;
-}
-
-h2 {
-  font-family: 'CircularStd-Medium' !important;
-  font-size: 1.2em;
+.logo {
+  cursor: pointer;
 }
 
 // Colours
-$dark-grey: #919ba1;
-$button-grey: #e6ebef;
-$light-purple: #d4d9e8;
-$dark-purple: #5c6686;
-$peach: #4391d8;
-$color: blue;
-$subtext: #727b88;
+$primary: #FF7BA7;
 $secondary: #86899E;
 
 //Media
@@ -75,6 +63,7 @@ ol {
 html,
 body {
   font-family: 'CircularStd-Book'!important;
+  background: #ffeff1;
 }
 
 img {
@@ -93,15 +82,14 @@ a {
 }
 
 p > a {
-  color: $dark-purple;
   font-weight: bold;
 }
 
 hr {
   border: 0;
   height: 0;
-  border-top: 12px solid #85FAED;
-  width: 26%;
+  border-top: 12px solid $primary;
+  width: 24%;
   position: relative;
   top: -42px;
   z-index: -1;
@@ -175,7 +163,8 @@ hr {
 }
 
 h1 {
-  font-size: 2.2em;
+  font-family: 'CircularStd-Bold' !important;
+  font-size: 2em;
   max-width: 80%;
   line-height: 1.4em;
   font-weight: 400;
@@ -189,33 +178,35 @@ h1 {
 h2 {
   font-family: 'CircularStd-Medium'!important;
   font-weight: 300;
+  font-size: 1.2em;
 }
 
 h3{
   font-family: 'CircularStd-Bold'!important;
   line-height: 1.4em;
-  padding-bottom: 1em;
+  padding-bottom: 0.8em;
+  font-weight: 300;
+  font-size: 1.3em;
 }
 
 h4 {
   font-family: 'CircularStd-Book'!important;
-  font-size: 0.8em;
+  font-size: 1em;
   font-weight: 300;
 }
 
 p {
-  font-size: 1em;
+  font-size: 1.1em;
   color: $secondary;
   font-weight: 300;
-  line-height: 1.6em;
   padding: 0 0 2em 0;
 }
 
 // Hero Content
 #hero-content {
   text-align: left;
-  padding: 6em 0 18em 0;
-  height: 40vh;
+  padding: 6em 0;
+  height: 50vh;
 
   @include media($mobile) {
     padding: 3em 0 11em 0;
@@ -225,6 +216,7 @@ p {
     max-width: 80%;
     font-size: 1.1em;
     padding-top: 1em;
+    line-height: 1.7em;
 
     @include media($mobile) {
       max-width: 90% !important;
@@ -241,25 +233,38 @@ p {
   padding-bottom: 4em;
   z-index: 1000;
   position: relative;
-  
 
+  
   .project {
-    width: 30%;
-    border: 2px solid black;
+    width: 46%;
     border-radius: 4px;
     margin-right: 2em;
     margin-bottom: 2em;
     position: relative;  
     transition-timing-function: ease-in-out;
+    border: 2px solid#FFB6C2;
+    background: #fff2f4;
+    
+    
 
-  
+    .about {
+      background: ('/images/background1.png');
+    }
+
 
     &:hover {
-      background: #F6FFFE;
-      border: 2px solid #85FAED;
-      cursor: pointer;    
-      transition-timing-function: ease-in-out;
-      transition: 0.25s; 
+      cursor: pointer;   
+      border: 2px solid #FF5E7B; 
+      background:#fffafa;
+      
+
+    }
+    img {
+      object-fit: cover;
+      width: 350px;
+      height: 200px;
+      margin-bottom: 1em;
+      border-radius: 3px;
     }
 
     @include media($tablet) {
@@ -268,6 +273,7 @@ p {
     @include media($mobile) {
       width: 100%;
       padding: 0;
+      margin-right: 0;
     }
 
     &:nth-child(odd) {
@@ -279,11 +285,23 @@ p {
     }
 
     .project-content {
-      padding: 2em;
+      padding: 0;
       font-size: 16px;
       font-size: 1rem;
       vertical-align: top;
       text-align: left;
+      padding: 3em 3em 2em 3em;
+
+      h5 {
+        color: black;
+        background: #ffd0d8;
+        font-weight: 400;
+        font-family: 'CircularStd-Medium';
+        padding: 0.5em;
+        border-radius: 3px;
+        display: inline-block;
+    }
+  
 
       @include media($mobile) {
         margin: 0 0 20px;
@@ -292,7 +310,7 @@ p {
       h2 {
         font-weight: 400;
         font-size: 1.2em;
-        padding: 0.5em 0 0.5em 0;
+        padding: 0.8em 0 0.5em 0;
 
         @include media($mobile) {
           line-height: 1.5em;
@@ -302,13 +320,15 @@ p {
       }
 
       p {
-        font-size: 0.9em;
+        font-size: 1em;
         line-height: 1.5em;
         color: #727b88;
-        font-size: 0.9em;
         line-height: 1.8em;
         font-weight: 400;
-        padding: 0 0 1em 0;
+        padding: 0 0 1.8em 0;
+
+        &:hover {
+        }
         @include media($mobile) {
           width: 100%;
         }
@@ -353,29 +373,69 @@ p {
   $mobile-width: 420px;
   $mobile-height: 600px;
 
-  .MobileVideo {
-    position: relative;
-    background-image: url('/images/iphone.png');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    width: $mobile-width;
-    height: $mobile-height;
-
-    video {
-      position: absolute;
-      top: 53px;
-      left: 86px;
-      width: 246px;
-      height: 437px;
-    }
-  }
 }
 
 ///// Footer /////
 
 section#footer {
-  height: 70px;
+  height: 160px;
   text-align: center;
   color: $secondary;
+  position: relative;
+
+  .copyright {
+    position: relative;
+    left: 14em;
+    width: 67%;
+  }
+
+  .links {
+    ul {
+      list-style-type: none;
+      padding-bottom: 2em;
+      
+      li {
+        color: black;
+        font-family: 'CircularStd-Medium';
+        font-size: 1em;
+        display: inline; 
+        margin-left: 1em;
+        position: relative;
+        right: 1.8em;
+
+        &:hover {
+          border-bottom: 2px solid #FF5E7B;
+        }
+      }
+    }
+  }
 }
+
+.logo {
+  img {
+    height: 300px!important;
+    object-fit: cover;
+
+  }
+}
+
+//// About /////
+
+.about {
+  padding: 6em 0 18em 0;
+  margin: auto;
+  background: white;
+
+  .header {
+
+  }
+
+ 
+
+
+  .content {
+    max-width: 900px;
+  }
+}
+
 
